@@ -24,7 +24,17 @@
  .world-clock {
      max-width: 800px;
      margin: 0 auto;
-     padding: 20px;
+     padding: 30px;
      background: rgba(0, 0, 0, 0.7);
      border-radius: 10px;
+     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .city {
+     display: flex;
+     margin: 10px 0;
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 1px dashed #f0ebeb;
+     padding: 30px 0;
  }
