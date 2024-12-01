@@ -30,6 +30,12 @@
      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
  }
 
+ h1 {
+     text-align: center;
+     font-family: sans-serif;
+     font-size: 36px;
+ }
+
  .city {
      display: flex;
      margin: 10px 0;
@@ -37,4 +43,13 @@
      align-items: center;
      border-bottom: 1px dashed #f0ebeb;
      padding: 30px 0;
+ }
+
+ .city:last-child {
+     border-bottom: none;
+ }
+
+ .city h2 {
+     font-size: 28px;
+     margin: 0 0 5px;
  }
