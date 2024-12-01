@@ -10,3 +10,15 @@
      height: 100vh;
      overflow: hidden;
  }
+
+
+ img {
+     width: 30px;
+     vertical-align: middle;
+ }
+
+ .logo {
+     vertical-align: middle;
+     margin: 30px auto;
+     width: 150px;
+ }
