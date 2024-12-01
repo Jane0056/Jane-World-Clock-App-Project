@@ -1,71 +1,107 @@
+ /* Global Body Styles */
  body {
      margin: 0;
      font-family: 'Poppins', sans-serif;
-     background: linear-gradient(to bottom, #1e3c72, #2a5298);
+     background: linear-gradient(to bottom, #1e3c72, #243b55);
      color: #ffffff;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     padding: 10px;
+     box-sizing: border-box;
  }
 
+
+ /* Main Container */
  .world-clock {
-     max-width: 800px;
-     margin: 0 auto;
-     padding: 30px;
-     background: rgba(0, 0, 0, 0.7);
-     border-radius: 10px;
-     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     max-width: 900px;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.85);
+     padding: 20px;
+     border-radius: 16px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 4px 12px rgba(0, 0, 0, 0.5);
+     overflow: hidden;
+ }
+
+
+ /* Header Styles */
+ header {
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ h1 {
+     font-size: 36px;
+     font-weight: 600;
+     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
  }
 
  .logo {
-     vertical-align: middle;
-     margin: 30px auto;
-     width: 150px;
- }
-
- img {
-     width: 30px;
-     vertical-align: middle;
+     width: 100px;
+     border-radius: 50%;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
  }
 
 
-
- header {
-     text-align: center;
-     padding: 20px;
- }
-
-
-
- h1 {
-     text-align: center;
-     font-family: sans-serif;
-     font-size: 36px;
- }
-
+ /* City Selector Styles */
  .city-selector {
-     text-align: center;
      margin: 20px 0;
+     text-align: center;
+
  }
 
  select {
-     display: block;
      width: 100%;
+     max-width: 400px;
      font-size: 18px;
-     border-radius: 4px;
-     padding: 10px;
-     background-color: rgba(255, 255, 255, 0.2);
+     margin: 20px 0;
+     padding: 12px;
+     border-radius: 8px;
+     background: rgba(255, 255, 255, 0.2);
      border: 1px solid rgba(255, 255, 255, 0.5);
+     color: white;
+     text-align: center;
+     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s ease;
  }
 
- .search-input:focus {
-     border-color: #FFD700;
+ select:hover,
+ select:focus {
+     background-color: rgba(255, 255, 255, 0.3);
+     border-color: #ff9800;
  }
+
+ /* Styling the <option> elements */
+ option {
+     color: #000;
+     background: #fff;
+     padding: 10px;
+     text-align: left;
+     font-size: 16px;
+     border: none;
+ }
+
+ /* City Display */
+ #cities {
+     margin-top: 20px;
+ }
+
+
 
  .city {
      display: flex;
-     margin: 10px 0;
      justify-content: space-between;
      align-items: center;
-     border-bottom: 1px dashed #f0ebeb;
-     padding: 30px 0;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+     padding: 15px 0;
+     font-size: 16px;
+     border-radius: 5px;
+     gap: 20px;
  }
 
  .city:last-child {
@@ -73,35 +109,108 @@
  }
 
  .city h2 {
-     font-size: 28px;
-     margin: 0 0 5px;
+     font-size: 20px;
+     font-weight: 500;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     margin: 0;
  }
 
+
+ .city img {
+     width: 40px;
+     border-radius: 50%;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ }
+
+
  .date {
-     font-size: 16px;
+     font-size: 14px;
+     color: rgba(255, 255, 255, 0.8);
      opacity: 0.8;
  }
 
-
  .time {
-     font-size: 48px;
+     font-size: 42px;
      font-weight: bold;
+     color: #ff9800;
  }
 
  .time small {
-     font-size: 24px;
+     font-size: 18px;
      vertical-align: middle;
-     line-height: 48px;
+     line-height: 42px;
+     color: rgba(255, 255, 255, 0.8);
  }
 
- footer {
-     margin-top: 20px;
-     padding-top: 16px;
-     text-align: center;
-     font-size: 16px;
 
+ /* Footer Styles */
+ footer {
+     text-align: center;
+     margin-top: 20px;
+     font-size: 19px;
+     color: rgba(255, 255, 255, 0.8);
+     line-height: 1.5;
+ }
+
+ footer a {
+     color: #ff9800;
+     text-decoration: none;
+     transition: color 0.3s ease;
  }
 
  footer a:hover {
-     color: #134E96;
+     color: #ffcc80;
+ }
+
+
+ /* Responsive Design */
+
+ @media (max-width: 480px) {
+     h1 {
+         font-size: 28px;
+     }
+
+     .time {
+         font-size: 30px;
+     }
+
+     .city h2 {
+         font-size: 20px;
+     }
+
+     select {
+         font-size: 0.8rem;
+     }
+
+     .city {
+         flex-direction: column;
+         text-align: center;
+         gap: 15px;
+     }
+ }
+
+ @media (max-width: 768px) {
+     h1 {
+         font-size: 32px;
+     }
+
+     .city {
+         flex-direction: column;
+         text-align: center;
+         gap: 10px;
+     }
+
+     .city h2 {
+         font-size: 22px;
+     }
+
+     .time {
+         font-size: 36px;
+     }
+
+     select {
+         font-size: 16px;
+     }
  }
