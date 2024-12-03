@@ -86,6 +86,39 @@
      border: none;
  }
 
+ /* Toggle Button Styling */
+ .format-toggle {
+     text-align: center;
+     margin: 20px 0;
+ }
+
+ .format-toggle button {
+     background: linear-gradient(to right, #ff9800, #ff5722);
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-align: center;
+     text-decoration: none;
+     font-size: 16px;
+     font-weight: bold;
+     border-radius: 25px;
+     cursor: pointer;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s ease;
+ }
+
+ .format-toggle button:hover {
+     background: linear-gradient(to right, #ff5722, #ff9800);
+     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+     transform: scale(1.05);
+ }
+
+ .format-toggle button:active {
+     background: #e65100;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+     transform: scale(0.95);
+ }
+
  /* City Display */
  #cities {
      margin-top: 20px;

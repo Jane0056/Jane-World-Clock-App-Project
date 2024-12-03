@@ -1,3 +1,5 @@
+let is24HourFormat = false;
+
 // Function to update the times for predefined cities
 function updateTimeZone() {
   //Berlin TimeZone
@@ -9,7 +11,7 @@ function updateTimeZone() {
 
     berlinDateElement.innerHTML = berlinTime.format("MMMM Do YYYY");
     berlinTimeElement.innerHTML = berlinTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -22,7 +24,7 @@ function updateTimeZone() {
 
     brisbaneDateElement.innerHTML = brisbaneTime.format("MMMM Do YYYY");
     brisbaneTimeElement.innerHTML = brisbaneTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -35,7 +37,7 @@ function updateTimeZone() {
 
     chicagoDateElement.innerHTML = chicagoTime.format("MMMM Do YYYY");
     chicagoTimeElement.innerHTML = chicagoTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -48,7 +50,7 @@ function updateTimeZone() {
 
     londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
     londonTimeElement.innerHTML = londonTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -61,7 +63,7 @@ function updateTimeZone() {
 
     namibiaDateElement.innerHTML = namibiaTime.format("MMMM Do YYYY");
     namibiaTimeElement.innerHTML = namibiaTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -74,7 +76,7 @@ function updateTimeZone() {
 
     santiagoDateElement.innerHTML = santiagoTime.format("MMMM Do YYYY");
     santiagoTimeElement.innerHTML = santiagoTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 
@@ -87,7 +89,7 @@ function updateTimeZone() {
 
     seoulDateElement.innerHTML = seoulTime.format("MMMM Do YYYY");
     seoulTimeElement.innerHTML = seoulTime.format(
-      "h:mm:ss [<small>]A[</small>]"
+      is24HourFormat ? "HH:mm:ss" : "h:mm:ss [<small>]A[</small>]"
     );
   }
 }
@@ -95,6 +97,8 @@ function updateTimeZone() {
 // Function to update the city dynamically based on dropdown selection
 function updateCity(event) {
   let cityTimezone = event.target.value;
+
+  if (!cityTimezone) return;
 
   // Extract city name from timezone
   let cityName = cityTimezone.split("/")[1].replace("_", " ");
@@ -116,6 +120,14 @@ function updateCity(event) {
     </div>
   `;
 }
+
+document.querySelector("#toggle-format").addEventListener("click", function () {
+  is24HourFormat = !is24HourFormat;
+  this.textContent = is24HourFormat
+    ? "Switch to 12-Hour Format"
+    : "Switch to 24-Hour Format";
+  updateTimeZone();
+});
 
 // Add event listener to the dropdown for updating the selected city
 let citiesSelectElement = document.querySelector("#city");
