@@ -112,12 +112,11 @@
      border-color: #ff9800;
  }
 
+
  /* City Display */
  #cities {
      margin-top: 20px;
  }
-
-
 
  .city {
      display: flex;

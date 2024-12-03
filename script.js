@@ -2,7 +2,7 @@ let is24HourFormat = false;
 
 // Function to update the times for predefined cities
 function updateTimeZone() {
-  //Berlin TimeZone
+  // Berlin TimeZone
   let berlinElement = document.querySelector("#berlin");
   if (berlinElement) {
     let berlinDateElement = berlinElement.querySelector(".date");
@@ -15,7 +15,7 @@ function updateTimeZone() {
     );
   }
 
-  //Brisbane TimeZone
+  // Brisbane TimeZone
   let brisbaneElement = document.querySelector("#brisbane");
   if (brisbaneElement) {
     let brisbaneDateElement = brisbaneElement.querySelector(".date");
@@ -28,7 +28,7 @@ function updateTimeZone() {
     );
   }
 
-  //Chicago TimeZone
+  // Chicago TimeZone
   let chicagoElement = document.querySelector("#chicago");
   if (chicagoElement) {
     let chicagoDateElement = chicagoElement.querySelector(".date");
@@ -41,7 +41,7 @@ function updateTimeZone() {
     );
   }
 
-  //London TimeZone
+  // London TimeZone
   let londonElement = document.querySelector("#london");
   if (londonElement) {
     let londonDateElement = londonElement.querySelector(".date");
@@ -54,7 +54,7 @@ function updateTimeZone() {
     );
   }
 
-  //Namibia TimeZone
+  // Namibia TimeZone
   let namibiaElement = document.querySelector("#namibia");
   if (namibiaElement) {
     let namibiaDateElement = namibiaElement.querySelector(".date");
@@ -67,7 +67,7 @@ function updateTimeZone() {
     );
   }
 
-  //Santiago TimeZone
+  // Santiago TimeZone
   let santiagoElement = document.querySelector("#santiago");
   if (santiagoElement) {
     let santiagoDateElement = santiagoElement.querySelector(".date");
@@ -80,7 +80,7 @@ function updateTimeZone() {
     );
   }
 
-  //Seoul TimeZone
+  // Seoul TimeZone
   let seoulElement = document.querySelector("#seoul");
   if (seoulElement) {
     let seoulDateElement = seoulElement.querySelector(".date");
@@ -101,7 +101,8 @@ function updateCity(event) {
   if (!cityTimezone) return;
 
   // Extract city name from timezone
-  let cityName = cityTimezone.split("/")[1].replace("_", " ");
+  let cityName =
+    cityTimezone.split("/")[1]?.replace("_", " ") || "Unknown City";
 
   // Get the current time in the selected timezone
   let cityTime = moment.tz(cityTimezone);
@@ -114,19 +115,27 @@ function updateCity(event) {
             <h2>${cityName}</h2>
             <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
         </div>
-        <div class="time">${cityTime.format("h:mm:ss")}
-          <small>${cityTime.format("A")}</small>
+        <div class="time">${cityTime.format(
+          is24HourFormat ? "HH:mm:ss" : "h:mm:ss"
+        )}
+          ${is24HourFormat ? "" : `<small>${cityTime.format("A")}</small>`}
         </div>
     </div>
   `;
 }
 
+// Add event listener to the toggle button for 24-hour/12-hour format
 document.querySelector("#toggle-format").addEventListener("click", function () {
   is24HourFormat = !is24HourFormat;
   this.textContent = is24HourFormat
     ? "Switch to 12-Hour Format"
     : "Switch to 24-Hour Format";
-  updateTimeZone();
+
+  updateTimeZone(); // Update all predefined city times
+  const selectedCity = document.querySelector("#city").value;
+  if (selectedCity) {
+    updateCity({ target: { value: selectedCity } }); // Update the selected city dynamically
+  }
 });
 
 // Add event listener to the dropdown for updating the selected city
