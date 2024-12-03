@@ -92,7 +92,6 @@
      margin: 20px 0;
  }
 
-
  .format-toggle button {
      background: linear-gradient(to right, #444444, #333333);
      /* Subtle gradient */
@@ -111,9 +110,16 @@
  }
 
  .format-toggle button:hover {
-     background: linear-gradient(to right, #ff5722, #ff9800);
-     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
+     background: linear-gradient(to right, #555555, #444444);
+     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
      transform: scale(1.05);
+ }
+
+ .format-toggle button:active {
+     background: #222222;
+     /* Very dark for pressed state */
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.6);
+     transform: scale(0.95);
  }
 
 
