@@ -7,7 +7,7 @@ function updateTimeZone() {
   let berlinTime = moment().tz("Europe/Berlin");
   berlinDateElement.innerHTML = berlinTime.format("MMMM Do YYYY");
   berlinTimeElement.innerHTML = berlinTime.format(
-    "H:mm:ss [<small>]A[</small>]"
+    "h:mm:ss [<small>]A[</small>]"
   );
 
   //Brisbane Timezone
