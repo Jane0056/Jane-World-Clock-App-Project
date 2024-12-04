@@ -124,6 +124,8 @@ function updateCity(event) {
         </div>
     </div>
     <a href="/">All cities</a>
+    <a href="#city">Select from dropdown</a>
+    
   `;
 }
 
