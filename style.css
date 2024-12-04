@@ -86,35 +86,6 @@
      border: none;
  }
 
- /* Navigation Links Container */
- #navigation-links {
-     margin: 20px 0;
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     gap: 15px;
- }
-
- /* Navigation Buttons */
- #navigation-links button {
-     padding: 12px 20px;
-     font-size: 16px;
-     font-weight: 500;
-     color: #ffffff;
-     background: rgba(255, 255, 255, 0.2);
-     border: 1px solid rgba(255, 255, 255, 0.5);
-     border-radius: 8px;
-     text-transform: capitalize;
-     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.2);
-     cursor: pointer;
-     transition: all 0.3s ease;
- }
-
- #navigation-links button:hover {
-     background-color: rgba(255, 255, 255, 0.3);
-     border-color: #ff9800;
-     color: #ffcc80;
- }
 
  /* Toggle Button Styling */
  .format-toggle {
