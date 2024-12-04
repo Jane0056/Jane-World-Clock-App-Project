@@ -123,9 +123,9 @@ function updateCity(event) {
           ${is24HourFormat ? "" : `<small>${cityTime.format("A")}</small>`}
         </div>
     </div>
-    <a href="/">All cities</a>
-    <a href="#city">Select from dropdown</a>
-    
+    <div id="links-container">
+        <a href="/" class="navigation-link">Return back to all cities</a>
+    </div>
   `;
 }
 

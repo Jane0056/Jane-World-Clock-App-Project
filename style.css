@@ -113,6 +113,31 @@
      border-color: #ff9800;
  }
 
+ /* Styling for navigation links */
+ #links-container {
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+     margin-top: 20px;
+ }
+
+ .navigation-link {
+     font-size: 18px;
+     color: #ff9800;
+     text-decoration: none;
+     border: 1px solid rgba(255, 255, 255, 0.5);
+     padding: 10px 20px;
+     border-radius: 5px;
+     background: rgba(255, 255, 255, 0.2);
+     transition: all 0.3s ease;
+ }
+
+ .navigation-link:hover {
+     background: rgba(255, 255, 255, 0.3);
+     color: #ffffff;
+     border-color: #ffcc80;
+ }
+
 
  /* City Display */
  #cities {
