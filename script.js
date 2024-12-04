@@ -97,12 +97,14 @@ function updateTimeZone() {
 // Function to update the city dynamically based on dropdown selection
 function updateCity(event) {
   let cityTimezone = event.target.value;
+  if (cityTimezone === "current") {
+    cityTimezone = moment.tz.guess();
+  }
 
   if (!cityTimezone) return;
 
   // Extract city name from timezone
-  let cityName =
-    cityTimezone.split("/")[1]?.replace("_", " ") || "Unknown City";
+  let cityName = cityTimezone.split("/")[1]?.replace("_", " ");
 
   // Get the current time in the selected timezone
   let cityTime = moment.tz(cityTimezone);
@@ -121,6 +123,7 @@ function updateCity(event) {
           ${is24HourFormat ? "" : `<small>${cityTime.format("A")}</small>`}
         </div>
     </div>
+    <a href="/">All cities</a>
   `;
 }
 
