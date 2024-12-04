@@ -125,6 +125,7 @@ function updateCity(event) {
     </div>
     <div id="links-container">
         <a href="/" class="navigation-link">Return back to all cities</a>
+        <a href="#city" class="navigation-link">Select from dropdown</a>
     </div>
   `;
 }
