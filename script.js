@@ -130,6 +130,22 @@ function updateCity(event) {
   `;
 }
 
+// Function to focus on the dropdown
+function focusOnDropdown(event) {
+  event.preventDefault(); // Prevent default anchor behavior
+  const dropdown = document.querySelector("#city"); // Select the dropdown element
+  if (dropdown) {
+    dropdown.focus(); // Programmatically focus on the dropdown
+    dropdown.scrollIntoView({ behavior: "smooth", block: "center" }); // Smooth scroll to the dropdown
+  }
+}
+
+// Add event listener to the "Select from dropdown" link
+let dropdownLink = document.querySelector(".navigation-link[href='#city']");
+if (dropdownLink) {
+  dropdownLink.addEventListener("click", focusOnDropdown);
+}
+
 // Add event listener to the toggle button for 24-hour/12-hour format
 document.querySelector("#toggle-format").addEventListener("click", function () {
   is24HourFormat = !is24HourFormat;
