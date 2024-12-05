@@ -123,10 +123,15 @@ function updateCity(event) {
           ${is24HourFormat ? "" : `<small>${cityTime.format("A")}</small>`}
         </div>
     </div>
-    <div id="links-container">
-        <a href="/" class="navigation-link">Return back to all cities</a>
-    </div>
+     <div id="links-container">
+            <a href="javascript:void(0);" onclick="reloadPage()" class="navigation-link">Return back to all cities</a>
+      </div>
   `;
+}
+
+// Function to reload the page
+function reloadPage() {
+  location.reload();
 }
 
 // Add event listener to the toggle button for 24-hour/12-hour format
